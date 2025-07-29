@@ -1474,26 +1474,126 @@ body {
 .main-header {
     background-color: var(--dark-blue); /* This should already be there */
 }
-/* --- HEADER POSITIONING & TOP SPACING FIX --- */
+/* --- Transparent Header on Scroll Styles --- */
 
-/* Force the header to scroll with the page */
+/* Initial state for header at the top of the page */
+.header-wrapper {
+    position: absolute; /* Allows content to scroll behind it */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* Ensure it's above other content */
+    transition: background-color 0.4s ease, position 0.4s ease; /* Smooth transition */
+}
+
 .main-header {
-    position: static !important; /* Forces it to flow normally */
-    top: auto !important; /* Ensures no fixed top positioning */
-    left: auto !important; /* Ensures no fixed left positioning */
-    width: 100% !important; /* Ensures it takes full width but isn't fixed */
-    z-index: auto !important; /* Removes any high z-index that might keep it on top */
+    background-color: transparent; /* Start with transparent background */
+    padding: 20px 0; /* Adjust padding as needed for height */
+    box-shadow: none; /* No shadow initially */
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
 }
 
-/* Adjust padding for the body to prevent any content from being hidden under a previously sticky header */
+/* State when scrolled (JS adds 'scrolled' class to header-wrapper) */
+.header-wrapper.scrolled {
+    position: fixed; /* Make it stick */
+    background-color: var(--dark-blue); /* Solid background on scroll */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Add shadow on scroll */
+    padding: 10px 0; /* Optional: Make it slightly smaller on scroll */
+}
+
+/* Adjust main-header padding to restore original for inner elements */
+.header-wrapper.scrolled .main-header {
+    padding: 20px 0; /* Restore padding if parent padding changed */
+}
+
+
+/* Adjust content positioning for fixed header */
+/* This is crucial: Push down content when header becomes fixed */
 body {
-    padding-top: 0 !important; /* Remove any top padding that was compensating for a fixed header */
+    padding-top: 0; /* Ensure no default body padding-top */
+    margin: 0;
 }
 
-/* Ensure the first section on each page doesn't have an unnecessary margin-top */
-.page-header {
-    margin-top: 0 !important; /* Remove any margin that was compensating for a fixed header */
+/* Ensure the first section starts at the very top, beneath the absolute header */
+.hero-top-section {
+    padding-top: 150px; /* Adjust this value: header height + desired spacing. */
+                          /* This pushes content down *from the top of the page* */
+    min-height: calc(100vh - 80px); /* Adjust based on new header height and desired min-height */
+    display: flex; /* For vertical centering of hero content */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* For background image positioning */
+    z-index: 1; /* Ensure content is below header initially */
 }
 
-/* --- END HEADER POSITIONING & TOP SPACING FIX --- */
+/* If you have other .page-header sections, ensure they don't have issues */
+.page-header:not(.hero-top-section) { /* Exclude the hero section */
+    margin-top: 0; /* No extra margin-top if body padding-top handles spacing */
+    padding-top: 100px; /* Ensure content is pushed down properly on other pages */
+}
 
+/*
+   IMPORTANT: Remove any old conflicting header positioning CSS
+   Locate and REMOVE any of these from your style.css if they exist:
+   .main-header {
+       position: fixed;
+       position: static; !important
+       top: ...;
+       z-index: ...;
+   }
+   body { padding-top: ...; }
+   .page-header { margin-top: ...; }
+*/
+
+
+/* Mobile Navigation Styles (Keep these, but ensure they integrate with new header styles) */
+@media (max-width: 992px) {
+    .header-wrapper {
+        background-color: var(--dark-blue); /* Force background on mobile */
+        position: fixed !important; /* Always fixed on mobile for consistent nav */
+        padding: 0 !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    .main-header {
+        padding: 15px 0 !important; /* Adjust header height on mobile */
+    }
+
+    .header-wrapper.scrolled {
+        /* No change needed here, it's already fixed and colored on mobile */
+    }
+
+    /* Adjust body padding for fixed mobile header */
+    body {
+        padding-top: 80px; /* Adjust based on mobile header height */
+    }
+
+    .menu-toggle {
+        display: block !important;
+        color: #FFFFFF !important;
+        font-size: 2em !important;
+        background: none !important;
+        border: none !important;
+        cursor: pointer !important;
+        position: relative !important;
+        z-index: 9999 !important;
+    }
+
+    .main-nav ul {
+        background-color: var(--dark-blue);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+        width: calc(100% + 40px);
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+    .main-nav ul.active {
+        max-height: 500px;
+        padding: 20px 0;
+    }
+} 
