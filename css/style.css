@@ -583,3 +583,171 @@ ul {
         font-size: 1em;
     }
 }
+/* Page Header Section (for sub-pages) */
+.page-header {
+    background: var(--dark-blue);
+    padding: 80px 0 60px;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden; /* For potential background patterns/animations */
+}
+
+.page-header h1 {
+    color: var(--white);
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.page-header p.lead-text {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1em;
+}
+
+
+/* Our Story Section */
+.story-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.story-text {
+    flex: 2; /* Takes more space */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.story-image {
+    flex: 1; /* Takes less space */
+    min-width: 280px; /* Minimum width before wrapping */
+    text-align: center;
+}
+
+.story-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+/* Mission, Vision, Values Section */
+.mvv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.mvv-item {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mvv-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+}
+
+.mvv-item i {
+    font-size: 3.5em;
+    color: var(--teal);
+    margin-bottom: 20px;
+}
+
+.mvv-item h3 {
+    font-size: 1.6em;
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+}
+
+.mvv-item ul {
+    list-style: none; /* Remove default list style */
+    padding-left: 0;
+    text-align: left; /* Align text within list items */
+    margin-top: 15px;
+}
+
+.mvv-item ul li {
+    margin-bottom: 8px;
+    padding-left: 25px; /* Space for icon */
+    position: relative;
+}
+
+.mvv-item ul li::before {
+    content: "\f00c"; /* Font Awesome check icon */
+    font-family: "Font Awesome 5 Free"; /* Use 'Font Awesome 5 Free' or 'Font Awesome 6 Free' depending on version */
+    font-weight: 900; /* For solid icon */
+    color: var(--orange);
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+/* Why Choose Us Section */
+.choose-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.choose-us-item {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--light-grey);
+}
+
+.choose-us-item:hover {
+    border-color: var(--teal);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.choose-us-item i {
+    font-size: 3em;
+    color: var(--orange);
+    margin-bottom: 20px;
+}
+
+.choose-us-item h3 {
+    font-size: 1.5em;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments for About Page */
+@media (max-width: 992px) {
+    .story-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .story-text, .story-image {
+        flex: auto;
+        width: 100%;
+    }
+    .story-image {
+        order: -1; /* Puts image above text on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2.5em;
+    }
+    .mvv-item i, .choose-us-item i {
+        font-size: 2.5em;
+    }
+    .mvv-item h3, .choose-us-item h3 {
+        font-size: 1.4em;
+    }
+}
+
