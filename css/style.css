@@ -843,4 +843,105 @@ ul {
         font-size: 0.9em;
     }
 }
+/* Testimonials Section */
+.testimonials-section {
+    /* Styles for the section container */
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.testimonial-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes client info to bottom */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.testimonial-card .quote-icon {
+    font-size: 2.5em;
+    color: var(--orange);
+    margin-bottom: 20px;
+    text-align: left; /* Align quote icon to left */
+}
+
+.testimonial-card .testimonial-text {
+    font-size: 1.1em;
+    font-style: italic;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.testimonial-card .client-info {
+    display: flex;
+    align-items: center;
+    margin-top: auto; /* Pushes content to bottom of card */
+    padding-top: 20px; /* Space from text above */
+    border-top: 1px solid var(--light-grey);
+}
+
+.testimonial-card .client-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid var(--teal);
+}
+
+.testimonial-card .client-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card .client-name {
+    font-weight: 700;
+    color: var(--dark-blue);
+    font-size: 1.1em;
+}
+
+.testimonial-card .client-company {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Responsive adjustments for Testimonials Page */
+@media (max-width: 768px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    .testimonial-card {
+        padding: 25px;
+    }
+    .testimonial-card .quote-icon {
+        font-size: 2em;
+    }
+    .testimonial-card .testimonial-text {
+        font-size: 1em;
+    }
+    .testimonial-card .client-avatar {
+        width: 50px;
+        height: 50px;
+    }
+    .testimonial-card .client-name {
+        font-size: 1em;
+    }
+    .testimonial-card .client-company {
+        font-size: 0.85em;
+    }
+}
 
