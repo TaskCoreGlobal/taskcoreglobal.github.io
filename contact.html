@@ -1,18 +1,159 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TaskCore Global LTD</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header><h1>Contact TaskCore Global LTD</h1></header>
-    <main>
-        <p><strong>Address:</strong> 20, Providence Estate, Ologuneru</p>
-        <p><strong>Phone:</strong> 09160396318</p>
-        <p><strong>Email:</strong> info@taskcoreglobal.com</p>
-        <p><strong>Instagram:</strong> <a href="https://instagram.com/taskcore_global">taskcore_global</a></p>
-    </main>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="TaskCore Global LTD Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                    <li><a href="appointment.html" class="btn btn-primary">Book Appointment</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-header bg-dark text-white">
+        <div class="container text-center">
+            <h1>Get in Touch</h1>
+            <p class="lead-text">We're here to answer your questions and help you with your corporate service needs.</p>
+        </div>
+    </section>
+
+    <section class="contact-content section-padding">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Reach Out to TaskCore Global</h2>
+                    <p>Have a question about our services? Need a custom quote? Or just want to learn more about how we can streamline your operations? Don't hesitate to contact us. We're ready to assist you.</p>
+
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p><strong>Our Location:</strong><br>20, Providence Estate, Ologuneru, Ibadan, Oyo State, Nigeria</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <p><strong>Phone:</strong><br><a href="tel:+2349160396318">09160396318</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><strong>Email:</strong><br><a href="mailto:info@taskcoreglobal.com">info@taskcoreglobal.com</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p><strong>Business Hours:</strong><br>Mon - Fri: 9:00 AM - 5:00 PM (WAT)</p>
+                    </div>
+
+                    <div class="social-icons mt-4">
+                        <h3>Connect With Us:</h3>
+                        <a href="https://instagram.com/taskcore_global" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <form class="contact-form" action="#" method="POST"> <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-container mt-5">
+                <h2 class="text-center mb-4">Find Us on the Map</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.593790514022!2d3.8291771!3d7.2917021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10398f51a2e7c48f%3A0x6b4c7b8e0e7a2e0a!2sOloguneru%2C%20Ibadan%2C%20Oyo%20State!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <p class="text-center mt-3 text-muted">Please note: The map shows the general Ologuneru area. Contact us for precise directions.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta-section section-padding bg-light text-dark"> <div class="container text-center">
+            <h2>Ready to Discuss Your Project?</h2>
+            <p>We're eager to partner with you to achieve your operational goals.</p>
+            <a href="appointment.html" class="btn btn-primary btn-large">Book Your Free Consultation Today</a>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about-col">
+                    <img src="images/logo.png" alt="TaskCore Global LTD Logo" class="footer-logo">
+                    <p>TaskCore Global LTD is your ultimate partner for comprehensive corporate service solutions. One Partner, Endless Possibilities.</p>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/taskcore_global" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-info">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 20, Providence Estate, Ologuneru, Ibadan</p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+2349160396318">09160396318</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@taskcoreglobal.com">info@taskcoreglobal.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> TaskCore Global LTD. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
