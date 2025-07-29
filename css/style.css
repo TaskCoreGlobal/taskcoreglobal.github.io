@@ -1319,4 +1319,89 @@ ul {
         font-size: 1em;
     }
 }
+/* Mobile Navigation Styles */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: var(--white); /* Assuming header is dark */
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Ensure it's above other content */
+}
+
+/* Responsive adjustments for Header & Navigation */
+@media (max-width: 992px) {
+    .main-header .container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+    }
+
+    .main-nav {
+        width: 100%; /* Take full width */
+        order: 3; /* Push navigation below logo/toggle */
+        margin-top: 15px; /* Space from header elements */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        background-color: var(--dark-blue); /* Background for the dropdown menu */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 10px 0;
+        max-height: 0; /* Hidden by default */
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+        width: calc(100% + 40px); /* Account for container padding if any */
+        margin-left: -20px; /* Align with container edge */
+        margin-right: -20px; /* Align with container edge */
+    }
+
+    .main-nav ul.active {
+        max-height: 500px; /* Adjust based on content height */
+        padding: 20px 0;
+    }
+
+    .main-nav ul li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav ul li a {
+        display: block; /* Make links take full width of li */
+        padding: 12px 20px;
+        color: var(--white);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separator */
+    }
+
+    .main-nav ul li:last-child a {
+        border-bottom: none; /* No border on last item */
+    }
+
+    .main-nav ul li a.btn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: calc(100% - 40px); /* Adjust button width */
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block; /* Show menu toggle on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header .logo img {
+        max-width: 140px; /* Slightly smaller logo on very small screens */
+    }
+    .menu-toggle {
+        font-size: 1.6em;
+    }
+}
 
