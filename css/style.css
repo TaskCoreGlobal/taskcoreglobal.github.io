@@ -1080,4 +1080,243 @@ ul {
         height: 350px;
     }
 }
+/* Appointment Section */
+.appointment-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Info takes a bit more space than form */
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.appointment-intro h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--dark-blue);
+}
+
+.appointment-intro p {
+    margin-bottom: 15px;
+}
+
+.appointment-intro ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.appointment-intro ul li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    font-size: 1.05em;
+    color: #444;
+}
+
+.appointment-intro ul li i {
+    margin-right: 12px;
+    font-size: 1.1em;
+    color: var(--teal);
+    flex-shrink: 0;
+}
+
+.appointment-form-container {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.appointment-form-container h2 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: var(--dark-blue);
+    text-align: center; /* Center form title */
+}
+
+.appointment-form .form-group {
+    margin-bottom: 20px;
+}
+
+.appointment-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark-blue);
+}
+
+.appointment-form input[type="text"],
+.appointment-form input[type="email"],
+.appointment-form input[type="tel"],
+.appointment-form input[type="date"],
+.appointment-form input[type="time"],
+.appointment-form select,
+.appointment-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--light-grey);
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -webkit-appearance: none; /* Remove default styling for selects on iOS */
+    -moz-appearance: none; /* Remove default styling for selects on Firefox */
+    appearance: none; /* Remove default styling for selects */
+    background-color: var(--white); /* Ensure background is white for date/time */
+}
+
+.appointment-form select {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13%205.7L146.2%20208.7%2018.6%2075.1c-4.7-5.2-12.9-5.6-18.4-.9-5.5%204.7-5.9%2012.9-.9%2018.4l130.4%20117.8c2.9%202.7%206.5%204%2010.2%204s7.3-1.3%2010.2-4L287.9%2090.3c5-5.5%204.6-13.7-.9-18.4-5.4-4.6-13.6-4.2-18.4.9z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 12px auto;
+}
+
+
+.appointment-form input[type="text"]:focus,
+.appointment-form input[type="email"]:focus,
+.appointment-form input[type="tel"]:focus,
+.appointment-form input[type="date"]:focus,
+.appointment-form input[type="time"]:focus,
+.appointment-form select:focus,
+.appointment-form textarea:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(32, 178, 170, 0.2);
+    outline: none;
+}
+
+.appointment-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.appointment-form .btn-primary {
+    width: 100%; /* Make button full width */
+    padding: 14px 25px;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+/* Reinforce Contact Section */
+.reinforce-contact {
+    text-align: center;
+}
+
+.reinforce-contact h2 {
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+}
+
+.reinforce-contact .lead-text {
+    margin-bottom: 40px;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.contact-method-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    min-width: 250px;
+    flex-grow: 1; /* Allows cards to expand */
+    max-width: 400px; /* Limits max width */
+}
+
+.contact-method-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+    color: var(--teal); /* Change text color on hover */
+}
+
+.contact-method-card i {
+    font-size: 3em;
+    color: var(--orange);
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.contact-method-card:hover i {
+    color: var(--teal); /* Change icon color on hover */
+}
+
+.contact-method-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: var(--dark-blue); /* Ensure h3 color persists */
+    transition: color 0.3s ease;
+}
+
+.contact-method-card:hover h3 {
+    color: var(--teal); /* Change h3 color on hover */
+}
+
+.contact-method-card p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 0;
+    transition: color 0.3s ease;
+}
+
+.contact-method-card:hover p {
+    color: #444; /* Darken text slightly on hover */
+}
+
+
+/* Responsive adjustments for Appointment Page */
+@media (max-width: 992px) {
+    .appointment-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        gap: 40px;
+    }
+    .appointment-form-container {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .appointment-intro h2 {
+        font-size: 1.8em;
+    }
+    .appointment-intro ul li {
+        font-size: 1em;
+    }
+    .appointment-form-container h2 {
+        font-size: 1.6em;
+    }
+    .appointment-form input,
+    .appointment-form select,
+    .appointment-form textarea {
+        padding: 10px 12px;
+    }
+    .appointment-form .btn-primary {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+    .contact-methods {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-method-card {
+        min-width: unset;
+        width: 100%;
+        max-width: 350px; /* Constrain max width for stacked cards */
+    }
+    .contact-method-card h3 {
+        font-size: 1.3em;
+    }
+    .contact-method-card p {
+        font-size: 1em;
+    }
+}
 
