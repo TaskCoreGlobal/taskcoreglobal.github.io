@@ -1418,4 +1418,60 @@ body {
     padding: 100px 0; /* Adjust this value */
     /* ... other styles */
 }
+/* FORCED VISIBILITY & FUNCTIONALITY DEBUG */
+@media (max-width: 992px) {
+    .main-nav {
+        width: 100%;
+        order: 3;
+        margin-top: 15px;
+    }
+
+    .main-nav ul {
+        display: flex; /* Ensure it starts as flex to structure items even when hidden */
+        flex-direction: column;
+        background-color: var(--dark-blue);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 10px 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+        width: calc(100% + 40px); /* Adjust to match container width */
+        margin-left: -20px; /* Offset for container padding */
+        margin-right: -20px; /* Offset for container padding */
+    }
+
+    .main-nav ul.active {
+        max-height: 500px;
+        padding: 20px 0;
+    }
+
+    .main-nav ul li a.btn {
+        width: calc(100% - 40px);
+        margin: 10px auto; /* Center button */
+    }
+
+    /* Ensure the toggle is visible and correctly positioned */
+    .menu-toggle {
+        display: block !important; /* Force display */
+        color: #FFFFFF !important; /* Force white color */
+        font-size: 2em !important; /* Make it larger for visibility */
+        background: none !important;
+        border: none !important;
+        cursor: pointer !important;
+        position: relative !important; /* Ensure z-index works */
+        z-index: 9999 !important; /* Ensure it's on top of everything */
+    }
+
+    .main-header .container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+    }
+}
+
+/* Ensure header itself has a visible background */
+.main-header {
+    background-color: var(--dark-blue); /* This should already be there */
+}
 
