@@ -1474,4 +1474,26 @@ body {
 .main-header {
     background-color: var(--dark-blue); /* This should already be there */
 }
+/* --- HEADER POSITIONING & TOP SPACING FIX --- */
+
+/* Force the header to scroll with the page */
+.main-header {
+    position: static !important; /* Forces it to flow normally */
+    top: auto !important; /* Ensures no fixed top positioning */
+    left: auto !important; /* Ensures no fixed left positioning */
+    width: 100% !important; /* Ensures it takes full width but isn't fixed */
+    z-index: auto !important; /* Removes any high z-index that might keep it on top */
+}
+
+/* Adjust padding for the body to prevent any content from being hidden under a previously sticky header */
+body {
+    padding-top: 0 !important; /* Remove any top padding that was compensating for a fixed header */
+}
+
+/* Ensure the first section on each page doesn't have an unnecessary margin-top */
+.page-header {
+    margin-top: 0 !important; /* Remove any margin that was compensating for a fixed header */
+}
+
+/* --- END HEADER POSITIONING & TOP SPACING FIX --- */
 
