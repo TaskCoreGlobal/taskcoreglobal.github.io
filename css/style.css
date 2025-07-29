@@ -1404,4 +1404,18 @@ ul {
         font-size: 1.6em;
     }
 }
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    background-color: var(--light-grey); /* Or your desired background */
+    color: var(--text-color);
+}
+
+/* If you have a specific hero section on index.html, check its padding */
+.hero-section {
+    padding: 100px 0; /* Adjust this value */
+    /* ... other styles */
+}
 
