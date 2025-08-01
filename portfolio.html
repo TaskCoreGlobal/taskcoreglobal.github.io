@@ -3,79 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - TaskCore Global LTD</title>
+    <title>Our Portfolio - TaskCore Global LTD</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-<!-- Progress Bar -->
-<div id="progress-bar"></div>
-
-<!-- Header -->
-<header id="main-header">
-    <div class="container">
-        <div class="logo">
-            <img src="logo.png" alt="TaskCore Global Logo">
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="TaskCore Global LTD Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="appointment.html" class="btn btn-primary">Book Appointment</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="appointment.html" class="btn-orange">Book Appointment</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    </header>
 
-<!-- Page Header -->
-<section class="page-header portfolio-header">
-    <div class="container">
-        <h1>Our Portfolio</h1>
-        <p>Explore some of our recent projects</p>
-    </div>
-</section>
+    <section class="page-header bg-dark text-white">
+        <div class="container text-center">
+            <h1>Our Accomplished Projects</h1>
+            <p class="lead-text">Showcasing the Quality and Diversity of TaskCore Global's Work.</p>
+        </div>
+    </section>
 
-<!-- Portfolio Grid -->
-<section id="portfolio-gallery" class="fade-in">
-    <div class="container">
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="images/project1.webp" alt="Project 1">
-                <div class="portfolio-info">Government Building CCTV Installation</div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/project2.webp" alt="Project 2">
-                <div class="portfolio-info">Corporate Office Branding</div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/project3.webp" alt="Project 3">
-                <div class="portfolio-info">Large-Scale Intercom Network</div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/project4.webp" alt="Project 4">
-                <div class="portfolio-info">Custom Print & Design</div>
+    <section class="portfolio-gallery section-padding">
+        <div class="container">
+            <h2 class="text-center">Projects That Speak for Themselves</h2>
+            <p class="lead-text text-center">Explore a selection of our successful projects across various industries and service categories. Each project reflects our commitment to excellence, meticulous management, and client satisfaction.</p>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="images/portfolio-printing.jpg" alt="Office Stationery Redesign Project">
+                    <div class="portfolio-info">
+                        <h3>Corporate Stationery Redesign</h3>
+                        <p class="category">Printing & Branding</p>
+                        <p class="description">Managed end-to-end redesign and printing of stationery for a large corporate client, ensuring brand consistency across all materials.</p>
+                        <a href="contact.html" class="btn btn-text">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="images/portfolio-installation.jpg" alt="New Office IT Setup Project">
+                    <div class="portfolio-info">
+                        <h3>New Office IT Infrastructure Setup</h3>
+                        <p class="category">Installation & Maintenance</p>
+                        <p class="description">Complete installation and cabling for IT infrastructure in a 50-person new office space, delivered on schedule and within budget.</p>
+                        <a href="contact.html" class="btn btn-text">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="images/portfolio-cleaning.jpg" alt="Commercial Building Deep Cleaning Project">
+                    <div class="portfolio-info">
+                        <h3>Quarterly Commercial Deep Cleaning</h3>
+                        <p class="category">Cleaning & Facility Management</p>
+                        <p class="description">Executed comprehensive deep cleaning for a multi-story commercial building, enhancing hygiene and workplace appeal.</p>
+                        <a href="contact.html" class="btn btn-text">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="images/portfolio-procurement.jpg" alt="Office Furniture Procurement Project">
+                    <div class="portfolio-info">
+                        <h3>Bulk Office Furniture Procurement</h3>
+                        <p class="category">Strategic Procurement & Supply</p>
+                        <p class="description">Sourced and supplied ergonomic office furniture for a major client's expansion, negotiating favorable terms and timely delivery.</p>
+                        <a href="contact.html" class="btn btn-text">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="images/portfolio-renovation.jpg" alt="Office Renovation Project">
+                    <div class="portfolio-info">
+                        <h3>Minor Office Renovation & Painting</h3>
+                        <p class="category">General Corporate Services</p>
+                        <p class="description">Managed a small-scale office renovation, including interior painting and fixture updates, minimizing disruption to daily operations.</p>
+                        <a href="contact.html" class="btn btn-text">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="images/portfolio-logistics.jpg" alt="Corporate Event Logistics Project">
+                    <div class="portfolio-info">
+                        <h3>Corporate Event Logistics Support</h3>
+                        <p class="category">Event Management & Support</p>
+                        <p class="description">Provided comprehensive logistical support for a large corporate conference, including setup, breakdown, and on-site coordination.</p>
+                        <a href="contact.html" class="btn btn-text">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div> <div class="text-center mt-4">
+                <p>Don't see what you're looking for? Our capabilities are endless!</p>
+                <a href="appointment.html" class="btn btn-secondary btn-large">Discuss Your Custom Project</a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <p>&copy; 2025 TaskCore Global LTD. All Rights Reserved.</p>
-        <div class="social-icons">
-            <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank">Instagram</a>
-            <a href="#">Twitter/X</a>
-            <a href="#">YouTube</a>
+    <section class="cta-section section-padding bg-dark text-white">
+        <div class="container text-center">
+            <h2>Ready to Experience Seamless Project Execution?</h2>
+            <p>Partner with TaskCore Global LTD and let us deliver excellence for your next corporate project.</p>
+            <a href="appointment.html" class="btn btn-primary btn-large">Book Your Free Consultation Today</a>
         </div>
-    </div>
-</footer>
+    </section>
 
-<script src="Js/script.js"></script>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about-col">
+                    <img src="images/logo.png" alt="TaskCore Global LTD Logo" class="footer-logo">
+                    <p>TaskCore Global LTD is your ultimate partner for comprehensive corporate service solutions. One Partner, Endless Possibilities.</p>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/taskcore_global" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-info">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 20, Providence Estate, Ologuneru, Ibadan</p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+2349160396318">09160396318</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@taskcoreglobal.com">info@taskcoreglobal.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> TaskCore Global LTD. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
