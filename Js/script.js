@@ -1,13 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-        
-        // Hide the preloader once the window has fully loaded all resources
-        window.addEventListener('load', hidePreloader);
-        
-        // As a fallback, hide the preloader after a 2-second timeout
-        // This prevents the preloader from getting stuck if some asset fails to load
-        setTimeout(hidePreloader, 2000); // 2-second timeout
-    }
-
     // --- Mobile Menu Toggle ---
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNavUl = document.querySelector('.main-nav ul');
