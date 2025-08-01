@@ -172,8 +172,8 @@ ul {
 }
 
 .main-header .logo img {
-    height: 90px; /* Adjust as needed */
-    width: 150px;
+    height: 150px; /* Adjust as needed */
+    width: 350px;
 }
 
 .main-nav ul {
@@ -389,8 +389,8 @@ ul {
 }
 
 .footer-logo {
-    height: 60px; /* Adjust as needed */
-    width: auto;
+    height: 150px; /* Adjust as needed */
+    width: 300;
     margin-bottom: 150px;
     filter: brightness(0) invert(1); /* Makes the logo white for dark background */
 }
