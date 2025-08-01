@@ -1,16 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
     // --- Preloader Removal ---
-const preloader = document.getElementById('preloader');
-if (preloader) {
-    window.addEventListener('load', function() {
-        // Remove preloader after content is loaded
-        preloader.classList.add('hidden');
-    });
-    // Add a timeout just in case of slow loading
-    setTimeout(function() {
-        preloader.classList.add('hidden');
-    }, 1500); // 1.5 second timeout
-}
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        // This function will be called to hide the preloader
+        function hidePreloader() {
+            preloader.classList.add('hidden');
+            // Remove the preloader from the DOM after the transition is complete
+            preloader.addEventListener('transitionend', function() {
+                preloader.style.display = 'none';
+            });
+        }
+        
+        // Hide the preloader once the window has fully loaded all resources
+        window.addEventListener('load', hidePreloader);
+        
+        // As a fallback, hide the preloader after a 2-second timeout
+        // This prevents the preloader from getting stuck if some asset fails to load
+        setTimeout(hidePreloader, 2000); // 2-second timeout
+    }
+
     // --- Mobile Menu Toggle ---
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNavUl = document.querySelector('.main-nav ul');
