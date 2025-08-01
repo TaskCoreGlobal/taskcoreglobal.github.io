@@ -1,42 +1,43 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.querySelector('.main-nav ul');
+// ==== Loading Screen ====
+window.addEventListener("load", () => {
+    document.getElementById("loading").style.display = "none";
+});
 
-    if (menuToggle && mainNav) {
-        menuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
-            const icon = menuToggle.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
-            }
-        });
+// ==== Scroll Progress Bar ====
+window.onscroll = function() {
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (winScroll / height) * 100;
+    document.getElementById("progress-bar").style.width = scrolled + "%";
+};
+
+// ==== Hide Header on Scroll ====
+let lastScrollTop = 0;
+let header = document.getElementById("main-header");
+window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        header.style.top = "-80px"; // Hide header
+    } else {
+        header.style.top = "0"; // Show header
     }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+}, false);
 
-    // Header Transparency on Scroll
-    const headerWrapper = document.querySelector('.header-wrapper');
-    const heroSection = document.querySelector('.hero-top-section'); // Get the hero section
+// ==== Fade-in on Scroll ====
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px"
+};
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        appearOnScroll.unobserve(entry.target);
+    });
+}, appearOptions);
 
-    if (headerWrapper && heroSection) {
-        // Define the scroll threshold (when the header should become solid/fixed)
-        // This is typically the height of the header itself, or a bit more.
-        // Get the header's height dynamically
-        const headerHeight = headerWrapper.offsetHeight;
-
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > headerHeight / 2) { // You can adjust this threshold (e.g., headerHeight or headerHeight / 2)
-                headerWrapper.classList.add('scrolled');
-            } else {
-                headerWrapper.classList.remove('scrolled');
-            }
-        });
-    }
-
-
-    // Update current year in footer
-    const currentYearSpan = document.getElementById('currentYear');
-    if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
-    }
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
 });
