@@ -1319,17 +1319,52 @@ ul {
         font-size: 1em;
     }
 }
-/* Mobile Navigation Styles */
-.menu-toggle {
-    display: none; /* Hidden by default on desktop */
-    background: none;
-    border: none;
-    font-size: 1.8em;
-    color: var(--white); /* Assuming header is dark */
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1001; /* Ensure it's above other content */
+/* --- Mobile Navigation Styles --- */
+/* This is a media query, so these rules only apply to screens smaller than 768px */
+@media (max-width: 768px) {
+    .main-nav ul {
+        display: none; /* Hide the menu by default */
+        position: absolute;
+        top: 100%; /* Position it below the header */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color-dark); /* Or the color of your header */
+        flex-direction: column;
+        padding: 1rem 0;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .main-nav ul.active {
+        display: flex; /* Show the menu when the .active class is added by JavaScript */
+    }
+
+    .main-nav li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .main-nav li:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav a {
+        padding: 1rem;
+        display: block;
+        color: white; /* Or your preferred link color */
+    }
+
+    /* Styles for the hamburger icon */
+    .menu-toggle {
+        display: block; /* Show the hamburger button on mobile */
+    }
+
+    /* You might have a .main-header container with display: flex */
+    .main-header .container {
+        justify-content: space-between;
+    }
 }
+
 
 /* Responsive adjustments for Header & Navigation */
 @media (max-width: 992px) {
