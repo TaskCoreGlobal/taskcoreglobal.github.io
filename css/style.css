@@ -1496,8 +1496,14 @@ img {
         height: 56px;
     }
 }
-
-
+/* Hide header on scroll down, show on scroll up */
+.main-header.hide-on-scroll {
+    transform: translateY(-120%);
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+.main-header {
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+}
 
 
 
