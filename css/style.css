@@ -172,8 +172,8 @@ ul {
 }
 
 .main-header .logo img {
-    height: 350px; /* Adjust as needed */
-    width: 350px;
+    height: 250px; /* Adjust as needed */
+    width: 550px;
 }
 
 .main-nav ul {
@@ -1626,4 +1626,18 @@ body {
 body {
     padding-top: 0 !important;
 }
+/* --- Mobile Spacing Adjustments --- */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 10px 0; /* Reduce padding on mobile header */
+    }
 
+    .main-header .logo img {
+        height: 60px; /* Adjust logo height for smaller screens */
+    }
+
+    /* Adjust spacing on other pages */
+    .page-header {
+        padding-top: 80px; /* Adjust top padding to prevent content from being hidden */
+    }
+}
