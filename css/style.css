@@ -179,6 +179,8 @@ ul {
 .main-nav ul {
     display: flex;
     gap: 30px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .main-nav ul li a {
@@ -484,48 +486,6 @@ ul {
 
 /* Mobile Devices */
 @media (max-width: 768px) {
-    .main-header .main-nav {
-        display: none; /* Hide nav by default on mobile */
-        flex-direction: column;
-        position: absolute;
-        top: 90px; /* Below header */
-        left: 0;
-        width: 100%;
-        background-color: var(--white);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        padding: 20px 0;
-        border-top: 1px solid var(--light-grey);
-    }
-
-    .main-header .main-nav.active {
-        display: flex; /* Show when active */
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .main-nav ul li {
-        margin: 10px 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .main-nav ul li a {
-        padding: 10px 0;
-        display: block;
-        border-bottom: 1px solid var(--light-grey);
-    }
-    .main-nav ul li:last-child a {
-        border-bottom: none;
-    }
-
-    .menu-toggle {
-        display: block; /* Show menu toggle on mobile */
-    }
-
     .hero-section {
         padding: 100px 0;
     }
@@ -832,6 +792,9 @@ ul {
     }
     .portfolio-info h3 {
         font-size: 1.3em;
+    }
+    .portfolio-info .description {
+        font-size: 0.9em;
     }
 }
 
@@ -1319,365 +1282,87 @@ ul {
         font-size: 1em;
     }
 }
-/* --- Mobile Navigation Styles --- */
-/* This is a media query, so these rules only apply to screens smaller than 768px */
-@media (max-width: 768px) {
+
+/* --- Mobile Navigation & Header Styles (Corrected) --- */
+/* This section replaces all previous conflicting mobile nav code. */
+
+/* Base styles for the menu toggle (hidden by default) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: var(--dark-blue);
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+}
+
+/* Styles for mobile and tablet screens */
+@media (max-width: 992px) {
+    /* Header layout adjustments */
+    .main-header {
+        position: fixed;
+        width: 100%;
+    }
+    .main-header .container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .main-header .logo img {
+        height: 60px;
+    }
+
+    /* Show the menu toggle button */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Styles for the navigation menu (hidden by default) */
     .main-nav ul {
         display: none; /* Hide the menu by default */
         position: absolute;
-        top: 100%; /* Position it below the header */
+        top: 80px; /* Position it below the header. */
         left: 0;
         width: 100%;
-        background-color: var(--primary-color-dark); /* Or the color of your header */
+        background-color: var(--white);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         flex-direction: column;
-        padding: 1rem 0;
         text-align: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-    
-    .main-nav ul.active {
-        display: flex; /* Show the menu when the .active class is added by JavaScript */
-    }
-
-    .main-nav li {
-        width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .main-nav li:last-child {
-        border-bottom: none;
-    }
-
-    .main-nav a {
-        padding: 1rem;
-        display: block;
-        color: white; /* Or your preferred link color */
-    }
-
-    /* Styles for the hamburger icon */
-    .menu-toggle {
-        display: block; /* Show the hamburger button on mobile */
-    }
-
-    /* You might have a .main-header container with display: flex */
-    .main-header .container {
-        justify-content: space-between;
-    }
-}
-
-
-/* Responsive adjustments for Header & Navigation */
-@media (max-width: 992px) {
-    .main-header .container {
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 20px;
-    }
-
-    .main-nav {
-        width: 100%; /* Take full width */
-        order: 3; /* Push navigation below logo/toggle */
-        margin-top: 15px; /* Space from header elements */
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        background-color: var(--dark-blue); /* Background for the dropdown menu */
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 10px 0;
-        max-height: 0; /* Hidden by default */
-        overflow: hidden;
-        transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-        width: calc(100% + 40px); /* Account for container padding if any */
-        margin-left: -20px; /* Align with container edge */
-        margin-right: -20px; /* Align with container edge */
-    }
-
-    .main-nav ul.active {
-        max-height: 500px; /* Adjust based on content height */
-        padding: 20px 0;
-    }
-
-    .main-nav ul li {
-        margin: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .main-nav ul li a {
-        display: block; /* Make links take full width of li */
-        padding: 12px 20px;
-        color: var(--white);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separator */
-    }
-
-    .main-nav ul li:last-child a {
-        border-bottom: none; /* No border on last item */
-    }
-
-    .main-nav ul li a.btn {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width: calc(100% - 40px); /* Adjust button width */
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-        text-align: center;
-    }
-
-    .menu-toggle {
-        display: block; /* Show menu toggle on mobile */
-    }
-}
-
-@media (max-width: 768px) {
-    .main-header .logo img {
-        max-width: 140px; /* Slightly smaller logo on very small screens */
-    }
-    .menu-toggle {
-        font-size: 1.6em;
-    }
-}
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    margin: 0; /* Remove default body margin */
-    padding: 0; /* Remove default body padding */
-    background-color: var(--light-grey); /* Or your desired background */
-    color: var(--text-color);
-}
-
-/* If you have a specific hero section on index.html, check its padding */
-.hero-section {
-    padding: 100px 0; /* Adjust this value */
-    /* ... other styles */
-}
-/* FORCED VISIBILITY & FUNCTIONALITY DEBUG */
-@media (max-width: 992px) {
-    .main-nav {
-        width: 100%;
-        order: 3;
-        margin-top: 15px;
-    }
-
-    .main-nav ul {
-        display: flex; /* Ensure it starts as flex to structure items even when hidden */
-        flex-direction: column;
-        background-color: var(--dark-blue);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 10px 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-        width: calc(100% + 40px); /* Adjust to match container width */
-        margin-left: -20px; /* Offset for container padding */
-        margin-right: -20px; /* Offset for container padding */
-    }
-
-    .main-nav ul.active {
-        max-height: 500px;
-        padding: 20px 0;
-    }
-
-    .main-nav ul li a.btn {
-        width: calc(100% - 40px);
-        margin: 10px auto; /* Center button */
-    }
-
-    /* Ensure the toggle is visible and correctly positioned */
-    .menu-toggle {
-        display: block !important; /* Force display */
-        color: #FFFFFF !important; /* Force white color */
-        font-size: 2em !important; /* Make it larger for visibility */
-        background: none !important;
-        border: none !important;
-        cursor: pointer !important;
-        position: relative !important; /* Ensure z-index works */
-        z-index: 9999 !important; /* Ensure it's on top of everything */
-    }
-
-    .main-header .container {
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 20px;
-    }
-}
-
-/* Ensure header itself has a visible background */
-.main-header {
-    background-color: var(--dark-blue); /* This should already be there */
-}
-/* --- Transparent Header on Scroll Styles --- */
-
-/* Initial state for header at the top of the page */
-.header-wrapper {
-    position: absolute; /* Allows content to scroll behind it */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999; /* Ensure it's above other content */
-    transition: background-color 0.4s ease, position 0.4s ease; /* Smooth transition */
-}
-
-.main-header {
-    background-color: transparent; /* Start with transparent background */
-    padding: 20px 0; /* Adjust padding as needed for height */
-    box-shadow: none; /* No shadow initially */
-    transition: background-color 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
-}
-
-/* State when scrolled (JS adds 'scrolled' class to header-wrapper) */
-.header-wrapper.scrolled {
-    position: fixed; /* Make it stick */
-    background-color: var(--dark-blue); /* Solid background on scroll */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Add shadow on scroll */
-    padding: 10px 0; /* Optional: Make it slightly smaller on scroll */
-}
-
-/* Adjust main-header padding to restore original for inner elements */
-.header-wrapper.scrolled .main-header {
-    padding: 20px 0; /* Restore padding if parent padding changed */
-}
-
-
-/* Adjust content positioning for fixed header */
-/* This is crucial: Push down content when header becomes fixed */
-body {
-    padding-top: 0; /* Ensure no default body padding-top */
-    margin: 0;
-}
-
-/* Ensure the first section starts at the very top, beneath the absolute header */
-.hero-top-section {
-    padding-top: 150px; /* Adjust this value: header height + desired spacing. */
-                          /* This pushes content down *from the top of the page* */
-    min-height: calc(100vh - 80px); /* Adjust based on new header height and desired min-height */
-    display: flex; /* For vertical centering of hero content */
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative; /* For background image positioning */
-    z-index: 1; /* Ensure content is below header initially */
-}
-
-/* If you have other .page-header sections, ensure they don't have issues */
-.page-header:not(.hero-top-section) { /* Exclude the hero section */
-    margin-top: 0; /* No extra margin-top if body padding-top handles spacing */
-    padding-top: 100px; /* Ensure content is pushed down properly on other pages */
-}
-
-/*
-   IMPORTANT: Remove any old conflicting header positioning CSS
-   Locate and REMOVE any of these from your style.css if they exist:
-   .main-header {
-       position: fixed;
-       position: static; !important
-       top: ...;
-       z-index: ...;
-   }
-   body { padding-top: ...; }
-   .page-header { margin-top: ...; }
-*/
-
-
-/* Mobile Navigation Styles (Keep these, but ensure they integrate with new header styles) */
-@media (max-width: 992px) {
-    .header-wrapper {
-        background-color: var(--dark-blue); /* Force background on mobile */
-        position: fixed !important; /* Always fixed on mobile for consistent nav */
-        padding: 0 !important;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding: 0;
         z-index: 999;
     }
 
-    .main-header {
-        padding: 15px 0 !important; /* Adjust header height on mobile */
-    }
-
-    .header-wrapper.scrolled {
-        /* No change needed here, it's already fixed and colored on mobile */
-    }
-
-    /* Adjust body padding for fixed mobile header */
-    body {
-        padding-top: 80px; /* Adjust based on mobile header height */
-    }
-
-    .menu-toggle {
-        display: block !important;
-        color: #FFFFFF !important;
-        font-size: 2em !important;
-        background: none !important;
-        border: none !important;
-        cursor: pointer !important;
-        position: relative !important;
-        z-index: 9999 !important;
-    }
-
-    .main-nav ul {
-        background-color: var(--dark-blue);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-        width: calc(100% + 40px);
-        margin-left: -20px;
-        margin-right: -20px;
-    }
-
+    /* When the .active class is present, show the menu */
     .main-nav ul.active {
-        max-height: 500px;
-        padding: 20px 0;
-    }
-} 
-/* --- FIX FOR NAVIGATION MENU NOT SCROLLING AWAY --- */
-
-/* Force the navigation to scroll with the rest of the header */
-.main-header .main-nav {
-    position: static !important;
-    top: auto !important;
-    z-index: auto !important;
-}
-
-/* Ensure the unordered list inside the nav also follows normal flow on desktop */
-.main-header .main-nav ul {
-    position: static !important;
-    top: auto !important;
-    z-index: auto !important;
-}
-
-/* --- END FIX --- */
-/* Force header to scroll with page content */
-.header-wrapper,
-.main-header {
-    position: static !important;
-    top: auto !important;
-    z-index: auto !important;
-}
-
-/* Remove padding that was added for a fixed header */
-body {
-    padding-top: 0 !important;
-}
-/* --- Mobile Spacing Adjustments --- */
-@media (max-width: 768px) {
-    .main-header {
-        padding: 10px 0; /* Reduce padding on mobile header */
+        display: flex;
     }
 
-    .main-header .logo img {
-        height: 60px; /* Adjust logo height for smaller screens */
+    .main-nav ul li {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid var(--light-grey);
     }
 
-    /* Adjust spacing on other pages */
-    .page-header {
-        padding-top: 80px; /* Adjust top padding to prevent content from being hidden */
+    .main-nav ul li:last-child {
+        border-bottom: none;
     }
-}
-/* Fix for desktop menu items wrapping to a new line */
-.main-nav ul {
-    flex-wrap: nowrap;
-    white-space: nowrap; /* Ensures text doesn't wrap inside list items */
+
+    .main-nav ul li a {
+        padding: 15px 0;
+        display: block;
+        width: 100%;
+    }
+
+    .main-nav ul li .btn {
+        margin: 15px auto;
+        display: block;
+        width: calc(100% - 40px);
+    }
+    
+    /* Adjust body padding to prevent content from being hidden by the fixed header */
+    body {
+        padding-top: 80px; /* This should match the height of your fixed header on mobile */
+    }
 }
