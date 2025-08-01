@@ -1,12 +1,51 @@
-window.addEventListener("load", () => {
-    console.log("✅ Page fully loaded, hiding loader");
-    const loader = document.getElementById("loading");
-    if (loader) loader.style.display = "none";
-});
+document.addEventListener('DOMContentLoaded', function() {
+    // --- Mobile Menu Toggle ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNavUl = document.querySelector('.main-nav ul');
 
-// Safety fallback after 1.5 seconds
-setTimeout(() => {
-    console.log("⏱ Fallback timeout reached, hiding loader");
-    const loader = document.getElementById("loading");
-    if (loader) loader.style.display = "none";
-}, 1500);
+    if (menuToggle && mainNavUl) {
+        menuToggle.addEventListener('click', function() {
+            mainNavUl.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
+        });
+    } else {
+        console.error("Error: Could not find mobile menu toggle or navigation ul.");
+    }
+
+    // --- Header Transparency on Scroll ---
+    const headerWrapper = document.querySelector('.header-wrapper');
+    if (headerWrapper) {
+        const headerHeight = headerWrapper.offsetHeight;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > headerHeight / 2) {
+                headerWrapper.classList.add('scrolled');
+            } else {
+                headerWrapper.classList.remove('scrolled');
+            }
+        });
+    }
+
+    // --- Smooth Scrolling for Anchor Links ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // --- Update current year in footer ---
+    const currentYearSpan = document.getElementById('currentYear');
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    }
+});
