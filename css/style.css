@@ -172,7 +172,7 @@ ul {
 }
 
 .main-header .logo img {
-    height: 50px; /* Adjust as needed */
+    height: 90px; /* Adjust as needed */
     width: auto;
 }
 
@@ -1597,3 +1597,20 @@ body {
         padding: 20px 0;
     }
 } 
+/* --- FIX FOR NAVIGATION MENU NOT SCROLLING AWAY --- */
+
+/* Force the navigation to scroll with the rest of the header */
+.main-header .main-nav {
+    position: static !important;
+    top: auto !important;
+    z-index: auto !important;
+}
+
+/* Ensure the unordered list inside the nav also follows normal flow on desktop */
+.main-header .main-nav ul {
+    position: static !important;
+    top: auto !important;
+    z-index: auto !important;
+}
+
+/* --- END FIX --- */
