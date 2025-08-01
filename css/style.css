@@ -1437,3 +1437,62 @@ ul {
 /* Fix for desktop menu items wrapping to a new line */
 .main-nav ul {
     flex-wrap: nowrap;
+/* Make all images responsive and never overflow their containers */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Service, portfolio, and testimonial images */
+.service-card img,
+.service-image img,
+.portfolio-item img {
+    width: 100%;
+    max-width: 400px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 auto 1rem auto;
+    display: block;
+}
+
+/* Avatars for testimonials */
+.testimonial-avatar,
+.client-avatar {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+    display: block;
+}
+
+/* Logo images in header and footer */
+.logo img,
+.footer-logo {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .service-card img,
+    .service-image img,
+    .portfolio-item img {
+        max-width: 100%;
+        height: 160px;
+    }
+    .logo img,
+    .footer-logo {
+        max-width: 120px;
+    }
+    .testimonial-avatar,
+    .client-avatar {
+        width: 56px;
+        height: 56px;
+    }
+}
