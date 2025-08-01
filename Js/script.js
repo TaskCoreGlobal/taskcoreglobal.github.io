@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // --- Preloader Removal ---
+const preloader = document.getElementById('preloader');
+if (preloader) {
+    window.addEventListener('load', function() {
+        // Remove preloader after content is loaded
+        preloader.classList.add('hidden');
+    });
+    // Add a timeout just in case of slow loading
+    setTimeout(function() {
+        preloader.classList.add('hidden');
+    }, 1500); // 1.5 second timeout
+}
     // --- Mobile Menu Toggle ---
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNavUl = document.querySelector('.main-nav ul');
