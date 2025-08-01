@@ -48,3 +48,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
+// Hide header on scroll down, show on scroll up
+let lastScroll = window.scrollY;
+const header = document.querySelector('.main-header');
+window.addEventListener('scroll', function() {
+    if (!header) return;
+    if (window.scrollY > lastScroll && window.scrollY > 80) {
+        header.classList.add('hide-on-scroll');
+    } else {
+        header.classList.remove('hide-on-scroll');
+    }
+    lastScroll = window.scrollY;
+});
