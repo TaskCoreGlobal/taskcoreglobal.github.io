@@ -1,43 +1,53 @@
-// ==== Loading Screen ====
+/* ==============================
+   TaskCore Global - Main Script
+   ============================== */
+
+/* ==== Loading Screen Fix ==== */
+// Hide loader after full load OR after 1.5 seconds max
 window.addEventListener("load", () => {
-    document.getElementById("loading").style.display = "none";
+    const loader = document.getElementById("loading");
+    if (loader) loader.style.display = "none";
 });
 
-// ==== Scroll Progress Bar ====
-window.onscroll = function() {
-    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrolled = (winScroll / height) * 100;
-    document.getElementById("progress-bar").style.width = scrolled + "%";
-};
+// Safety fallback in case load event fails
+setTimeout(() => {
+    const loader = document.getElementById("loading");
+    if (loader) loader.style.display = "none";
+}, 1500);
 
-// ==== Hide Header on Scroll ====
-let lastScrollTop = 0;
-let header = document.getElementById("main-header");
-window.addEventListener("scroll", function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
-        header.style.top = "-80px"; // Hide header
-    } else {
-        header.style.top = "0"; // Show header
-    }
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-}, false);
 
-// ==== Fade-in on Scroll ====
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = {
-    threshold: 0.2,
-    rootMargin: "0px 0px -50px 0px"
-};
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('appear');
-        appearOnScroll.unobserve(entry.target);
+/* ==== Mobile Menu Toggle ==== */
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
     });
-}, appearOptions);
+}
 
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
+
+/* ==== Smooth Scroll ==== */
+const links = document.querySelectorAll("a[href^='#']");
+links.forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    });
+});
+
+
+/* ==== Sticky Header on Scroll ==== */
+window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
 });
