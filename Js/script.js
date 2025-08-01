@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Smooth Scrolling for Anchor Links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+            // Only smooth scroll if the link is on the current page
             const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
+            if (targetId.length > 1 && document.querySelector(targetId)) {
+                e.preventDefault();
+                document.querySelector(targetId).scrollIntoView({
                     behavior: 'smooth'
                 });
             }
@@ -48,4 +48,3 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
-});
