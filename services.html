@@ -5,208 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - TaskCore Global LTD</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="TaskCore Global LTD Logo">
-                </a>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="appointment.html" class="btn btn-primary">Book Appointment</a></li>
-                </ul>
-            </nav>
-            <button class="menu-toggle" aria-label="Toggle Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
+<!-- Progress Bar -->
+<div id="progress-bar"></div>
 
-    <section class="page-header bg-dark text-white">
-        <div class="container text-center">
-            <h1>Our Comprehensive Services</h1>
-            <p class="lead-text">One Partner, Every Solution: Streamlining Your Corporate Operations.</p>
+<!-- Header -->
+<header id="main-header">
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="TaskCore Global Logo">
         </div>
-    </section>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="appointment.html" class="btn-orange">Book Appointment</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-    <section class="services-intro section-padding">
-        <div class="container text-center">
-            <h2>Your All-in-One Solution Provider</h2>
-            <p class="lead-text">TaskCore Global LTD simplifies your operational management by offering a vast array of services, meticulously executed by our vetted network of professionals. We eliminate the need for multiple vendors, ensuring consistency, quality, and efficiency across all your projects.</p>
-            <div class="intro-grid">
-                <div class="intro-item">
-                    <i class="fas fa-magic"></i>
-                    <h3>Seamless Integration</h3>
-                    <p>We become an extension of your team, integrating smoothly with your existing workflows to provide hassle-free service delivery.</p>
-                </div>
-                <div class="intro-item">
-                    <i class="fas fa-star"></i>
-                    <h3>Guaranteed Excellence</h3>
-                    <p>Every project undertaken adheres to the highest quality standards, backed by our commitment and guarantees.</p>
-                </div>
-                <div class="intro-item">
-                    <i class="fas fa-cubes"></i>
-                    <h3>Diverse Capabilities</h3>
-                    <p>From routine maintenance to specialized projects, our network covers virtually every corporate service requirement.</p>
-                </div>
-            </div>
+<!-- Page Header -->
+<section class="page-header services-header">
+    <div class="container">
+        <h1>Our Services</h1>
+        <p>Discover what TaskCore Global LTD can do for you</p>
+    </div>
+</section>
+
+<!-- Services List -->
+<section id="services-list" class="fade-in">
+    <div class="container">
+        <div class="service-block">
+            <h2>CCTV & Intercom Installations</h2>
+            <p>We provide professional setup and maintenance for security cameras, intercoms, and other surveillance solutions tailored to your business or home.</p>
         </div>
-    </section>
-
-    <section id="printing" class="service-category section-padding bg-light">
-        <div class="container service-content-layout">
-            <div class="service-image">
-                <img src="images/service-printing.jpg" alt="Corporate Printing and Branding Services">
-            </div>
-            <div class="service-text">
-                <h2>Corporate Printing & Branding</h2>
-                <p>Elevate your corporate identity with our comprehensive printing and branding solutions. We handle everything from high-volume document printing to bespoke marketing collateral and consistent brand application across all touchpoints.</p>
-                <ul>
-                    <li><i class="fas fa-check-circle text-orange"></i> Business Cards & Stationery</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Brochures, Flyers & Marketing Materials</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Large Format Printing (Banners, Posters)</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Corporate Gifts & Promotional Items</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Vehicle Branding & Signage</li>
-                </ul>
-                <a href="appointment.html" class="btn btn-primary">Request a Printing Quote</a>
-            </div>
+        <div class="service-block">
+            <h2>Business Solutions</h2>
+            <p>From workflow optimization to process automation, our business solutions are designed to improve efficiency and drive growth.</p>
         </div>
-    </section>
-
-    <section id="installation" class="service-category section-padding">
-        <div class="container service-content-layout reverse-layout">
-            <div class="service-image">
-                <img src="images/service-installation.jpg" alt="Installation and Maintenance Services">
-            </div>
-            <div class="service-text">
-                <h2>Installation & Maintenance</h2>
-                <p>Ensure your operations run smoothly with our expert installation and reliable maintenance services. We manage the setup and upkeep of critical equipment, infrastructure, and office fixtures.</p>
-                <ul>
-                    <li><i class="fas fa-check-circle text-orange"></i> Office Equipment Installation (Printers, IT hardware)</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Furniture Assembly & Setup</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> IT Network Cabling & Configuration</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> HVAC & Electrical System Maintenance (Subcontracted specialists)</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Specialized Machinery Installation</li>
-                </ul>
-                <a href="appointment.html" class="btn btn-primary">Schedule Installation Service</a>
-            </div>
+        <div class="service-block">
+            <h2>Printing & Branding</h2>
+            <p>High-quality print materials and creative branding strategies to help your business stand out in the marketplace.</p>
         </div>
-    </section>
-
-    <section id="cleaning" class="service-category section-padding bg-light">
-        <div class="container service-content-layout">
-            <div class="service-image">
-                <img src="images/service-cleaning.jpg" alt="Professional Cleaning Services">
-            </div>
-            <div class="service-text">
-                <h2>Professional Cleaning & Facility Management</h2>
-                <p>Maintain a pristine, healthy, and productive work environment with our comprehensive cleaning and facility management solutions, tailored to your corporate needs.</p>
-                <ul>
-                    <li><i class="fas fa-check-circle text-orange"></i> Office & Commercial Cleaning</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Deep Cleaning & Sanitization</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Post-Construction Cleanup</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Waste Management Solutions</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Specialized Floor Care</li>
-                </ul>
-                <a href="appointment.html" class="btn btn-primary">Request a Cleaning Quote</a>
-            </div>
+        <div class="service-block">
+            <h2>IT Support & Networking</h2>
+            <p>Reliable IT infrastructure setup, network solutions, and ongoing tech support for smooth business operations.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="procurement" class="service-category section-padding">
-        <div class="container service-content-layout reverse-layout">
-            <div class="service-image">
-                <img src="images/service-procurement.jpg" alt="Strategic Procurement Services">
-            </div>
-            <div class="service-text">
-                <h2>Strategic Procurement & Supply</h2>
-                <p>Optimize your supply chain and ensure timely access to essential resources with our efficient procurement and supply services. We source quality products and materials, managing the entire purchasing process.</p>
-                <ul>
-                    <li><i class="fas fa-check-circle text-orange"></i> Office Supplies & Consumables</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> IT Hardware & Software Sourcing</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Specialized Equipment Procurement</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Bulk Material Sourcing</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Logistics & Delivery Management</li>
-                </ul>
-                <a href="appointment.html" class="btn btn-primary">Inquire About Procurement</a>
-            </div>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 TaskCore Global LTD. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank">Instagram</a>
+            <a href="#">Twitter/X</a>
+            <a href="#">YouTube</a>
         </div>
-    </section>
+    </div>
+</footer>
 
-    <section id="general" class="service-category section-padding bg-light">
-        <div class="container service-content-layout">
-            <div class="service-image">
-                <img src="images/service-general.jpg" alt="General Corporate Services">
-            </div>
-            <div class="service-text">
-                <h2>General Corporate Services</h2>
-                <p>For all other operational needs, TaskCore Global is your reliable partner. Our extensive network allows us to provide solutions for a wide range of diverse corporate requirements, ensuring no task is too big or too small.</p>
-                <ul>
-                    <li><i class="fas fa-check-circle text-orange"></i> Painting & Renovation Support</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> General Repairs & Maintenance</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Event Setup & Support</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Waste Disposal & Recycling</li>
-                    <li><i class="fas fa-check-circle text-orange"></i> Ad-hoc Labor & Support</li>
-                </ul>
-                <a href="contact.html" class="btn btn-primary">Discuss Your Unique Needs</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section section-padding bg-dark text-white">
-        <div class="container text-center">
-            <h2>Ready to Transform Your Corporate Operations?</h2>
-            <p>Let TaskCore Global LTD be the single partner you need for endless possibilities.</p>
-            <a href="appointment.html" class="btn btn-primary btn-large">Book Your Free Consultation Today</a>
-        </div>
-    </section>
-
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col about-col">
-                    <img src="images/logo.png" alt="TaskCore Global LTD Logo" class="footer-logo">
-                    <p>TaskCore Global LTD is your ultimate partner for comprehensive corporate service solutions. One Partner, Endless Possibilities.</p>
-                    <div class="social-icons">
-                        <a href="https://instagram.com/taskcore_global" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col quick-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col contact-info">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 20, Providence Estate, Ologuneru, Ibadan</p>
-                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+2349160396318">09160396318</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@taskcoreglobal.com">info@taskcoreglobal.com</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> TaskCore Global LTD. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
+<script src="Js/script.js"></script>
 </body>
 </html>
