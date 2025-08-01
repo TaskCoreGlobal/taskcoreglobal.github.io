@@ -1641,3 +1641,8 @@ body {
         padding-top: 80px; /* Adjust top padding to prevent content from being hidden */
     }
 }
+/* Fix for desktop menu items wrapping to a new line */
+.main-nav ul {
+    flex-wrap: nowrap;
+    white-space: nowrap; /* Ensures text doesn't wrap inside list items */
+}
