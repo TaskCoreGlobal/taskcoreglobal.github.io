@@ -160,5 +160,39 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNavUl = document.querySelector('.main-nav ul');
+    if (menuToggle && mainNavUl) {
+        menuToggle.addEventListener('click', function() {
+            mainNavUl.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
+        });
+    }
+    // Set current year in footer
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+    // Header hide/show on scroll
+    let lastScroll = window.scrollY;
+    const header = document.querySelector('.main-header');
+    window.addEventListener('scroll', function() {
+        if (!header) return;
+        if (window.scrollY > lastScroll && window.scrollY > 80) {
+            header.classList.add('hide-on-scroll');
+        } else {
+            header.classList.remove('hide-on-scroll');
+        }
+        lastScroll = window.scrollY;
+    });
+});
+</script>
 </body>
 </html>
