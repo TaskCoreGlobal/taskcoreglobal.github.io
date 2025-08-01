@@ -1,15 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // --- Preloader Removal ---
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        // This function will be called to hide the preloader
-        function hidePreloader() {
-            preloader.classList.add('hidden');
-            // Remove the preloader from the DOM after the transition is complete
-            preloader.addEventListener('transitionend', function() {
-                preloader.style.display = 'none';
-            });
-        }
         
         // Hide the preloader once the window has fully loaded all resources
         window.addEventListener('load', hidePreloader);
