@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">TaskCore Vision Media temporary brand mark</title>
+  <desc id="desc">A media play symbol and frame with TaskCore Vision Media text.</desc>
+  <rect width="900" height="520" rx="36" fill="#1A2F4B"/>
+  <rect x="76" y="92" width="748" height="336" rx="28" fill="#FFFFFF"/>
+  <rect x="116" y="132" width="668" height="256" rx="18" fill="#101828"/>
+  <path d="M410 206v108l96-54z" fill="#FF7B25"/>
+  <circle cx="172" cy="176" r="16" fill="#00ADB5"/>
+  <circle cx="224" cy="176" r="16" fill="#FF7B25"/>
+  <circle cx="276" cy="176" r="16" fill="#FFFFFF"/>
+  <text x="450" y="454" text-anchor="middle" fill="#FFFFFF" font-family="Montserrat, Arial, sans-serif" font-size="44" font-weight="800">TaskCore Vision Media</text>
+  <text x="450" y="488" text-anchor="middle" fill="#A8DADC" font-family="Open Sans, Arial, sans-serif" font-size="22" font-weight="700">COMING SOON</text>
+</svg>
