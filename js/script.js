@@ -29,11 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector(".main-header");
     window.addEventListener("scroll", function () {
         if (!header) return;
-        if (mainNav && mainNav.classList.contains("active")) {
-            header.classList.remove("hide-on-scroll");
-            lastScroll = window.scrollY;
-            return;
-        }
         if (window.scrollY > lastScroll && window.scrollY > 80) {
             header.classList.add("hide-on-scroll");
         } else {
